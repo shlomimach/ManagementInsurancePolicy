@@ -1,0 +1,59 @@
+@import '../../../styles.css';
+
+.menu-container {
+  background-color: crimson; /* שינוי צבע הרקע */
+  width: 200px;
+  height: 95vh;
+  position: fixed;
+  right: 0;
+  top: 0; /* שהתפריט יתחיל מהקצה העליון */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* סידור התוכן מהתחלה */
+  padding-top: 20px; /* רווח בקצה העליון */
+  overflow-y: auto;
+}
+
+.menu-button {
+  background-color: #ffffff; /* רקע לבן לכפתור */
+  color: #333; /* צבע טקסט כהה */
+  font-size: 16px;
+  border: none; /* הסרת מסגרת */
+  margin: 10px 0; /* מרווח בין כפתורים */
+  width: 80%; /* רוחב הכפתורים */
+  border-radius: 20px; /* קצוות מעוגלים יותר */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* צל עדין */
+  transition: transform 0.2s ease, background-color 0.3s; /* אנימציה */
+}
+
+  .menu-button:hover {
+    background-color: #e0e0e0; /* רקע כהה יותר בהובר */
+    transform: scale(1.05); /* גדילה קלה בהובר */
+    color: #4CAF50;
+  }
+
+.menu-image {
+  max-width: 100%; /* גודל תמונה מתואם */
+  width:100px;
+  height: auto; /* שמירה על פרופורציות */
+  margin-top: 70px; /* מרווח מתחת לתמונה */
+}
+.toggle-menu-btn {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  z-index: 1000;
+}
+
+
+/* מדיה קוורי עבור מסכים קטנים */
+@media (max-width: 768px) {
+  .menu-container {
+    width: 0;
+    overflow: hidden;
+    transition: width 0.5s ease;
+  }
+
+
+}

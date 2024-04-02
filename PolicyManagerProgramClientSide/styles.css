@@ -1,0 +1,169 @@
+/* You can add global styles to this file, and also import other style files */
+
+/*html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }*/
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    padding-top: 60px;
+  }
+  
+  .search-container {
+    position: fixed;
+    top: 0;
+    left: 0; 
+    left: 200px; /* התחל מ-200px מהצד השמאלי כדי לא לחפוף על התפריט */
+    width: calc(100% - 200px); /* חישוב הרוחב כך שלא יחפוף על התפריט */
+    padding-right: 50px;
+    background-color: #f1f1f1;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+  
+  .search-input {
+    width: 25%;
+    padding: 8px;
+    margin-right: 600px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  
+  
+  .student-list-container {
+    background-color: #fff;
+    padding: 0px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-right: 210px; 
+    overflow-x: auto; /* מאפשר גלילה אופקית אם הטבלה רחבה מדי */
+  }
+  
+  .pagination-buttons {
+    text-align: center;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap; /* מונע גלילה לשורה הבאה */
+  }
+  
+  .pagination-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin: 0 2px; /* מרווח קטן יותר בין הכפתורים */
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px; 
+  }
+  
+    .pagination-button:disabled {
+      background-color: #cccccc;
+      cursor: not-allowed;
+    }
+  
+    .pagination-button:hover {
+      background-color: #367c39;
+    }
+  
+  table {
+    width: 90%;
+    border-collapse: collapse;
+    margin-right: 80px;
+  }
+  
+  table, th, td {
+    border: 1px solid #ddd;
+  }
+  
+  th, td {
+    text-align: center;
+    padding: 8px;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  h3, h5, h4 {
+    background-color: #f9f9f9;
+    padding-right:80px;
+  }
+  h2 {
+    background-color: #f9f9f9;
+    padding-right: 80px;
+  }
+  button {
+    position: relative;
+    border-radius: 25px;
+    border: 2px solid rgb(231, 50, 50);
+    background-color: #fff;
+    cursor: pointer;
+    box-shadow: 0 0 10px #333;
+    overflow: hidden;
+    transition: .3s;
+    text-align: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+  }
+  
+  .menu-image {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+  }
+  
+  button:hover {
+    background-color: rgb(245, 207, 207);
+    transform: scale(1.2);
+    box-shadow: 0 0 4px #111;
+    transition: .3s;
+  }
+  
+  svg {
+    color: rgb(231, 50, 50);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s;
+  }
+  
+  button:focus svg {
+    opacity: 0;
+    transition: .3s;
+  }
+  
+  span {
+    width: 150px;
+    position: absolute;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    color: rgb(231, 50, 50);
+    font-weight: 600;
+    transition: .3s;
+  }
+  
+  button:focus {
+    width: 150px;
+    height: 50px;
+    transition: .3s;
+  }
+  
+  button:focus span {
+    opacity: 1;
+    transition: .3s;
+  }
+  

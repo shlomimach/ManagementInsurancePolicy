@@ -1,0 +1,71 @@
+.container {
+    display: flex;
+    min-height: 95vh; /* גובה מינימלי של כל המסך */
+  }
+  
+  .sidebar {
+    width: 20%; /* רוחב של 30% מהמסך */
+    background-color: #add8e6; /* צבע תכלת */
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .content {
+    flex: 1; /* מתמלא לכל המקום הפנוי */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .header {
+    text-align: center;
+    padding: 20px;
+    background-color: #add8e6; 
+    color: white;
+  }
+  
+  .form-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /*.input-row {
+    display: flex;
+    gap: 50px;*/ /* מרווח בין האינפוטים */
+    /*margin-bottom: 50px;*/ /* מרווח מתחת לשורת האינפוטים */
+  /*}
+  
+  input, select, .submit-button {
+    width: 200px;*/ /* רוחב קבוע לכל האינפוטים, select ולכפתור */
+    /*box-sizing: border-box;
+  }
+  
+  input, select {
+    padding: 10px;
+    margin-bottom: 10px;*/ /* מרווח מתחת לכל אינפוט ול select */
+  /*}
+  
+  .input-field label {
+    display: block;*/ /* שינוי התווית להיות בשורה חדשה מעל האינפוט */
+    /*margin-bottom: 5px;*/ /* מרווח מתחת לתווית */
+  /*}
+  
+  .submit-button {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;*/ /* מרווח מעל לכפתור */
+  /*}
+  
+    .submit-button:hover {
+      background-color: #45a049;
+    }*/
+  

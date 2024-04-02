@@ -1,0 +1,81 @@
+<html dir="rtl">
+<body>
+  <div>
+
+    
+  </div>
+  <div class="form-container" *ngIf="!showModal">
+    <form #myForm="ngForm" (ngSubmit)="submitForm(myForm)">
+      <div class="input-row">
+        <div class="input-field">
+          <label for="fullName">שם מלא</label>
+          <input id="fullName" name="fullName" [(ngModel)]="user.fullName" />
+        </div>
+        <div class="input-field" *ngIf="isIdEditable">
+          <label for="id">תעודת זהות</label>
+          <input type="text" id="id" name="id"  [(ngModel)]="user.id" />
+        </div>
+        <div class="input-field">
+          <label for="email">דואר אלקטרוני</label>
+          <input id="email" name="email" [(ngModel)]="user.email" />
+        </div>
+      </div>
+      <button type="submit">שמור</button>
+    </form>
+    
+  </div>
+  <div class="student-list-container" *ngIf="policies.length > 0 && !showModal">
+    <h3>פוליסות</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>מספר הפוליסה</th>
+          <th>סכום הביטוח</th>
+          <th>תאריך התחלת הפוליסה</th>
+          <th>תאריך סיום הפוליסה</th>
+          <th>פעולות</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let policyForm of policies">
+          <td><input [(ngModel)]="policyForm.policyNumber"/></td>
+          <td><input [(ngModel)]="policyForm.insuranceAmount" /></td>
+          <td><input type="date" [(ngModel)]="policyForm.startDate" (ngModelChange)="policyForm.startDate = $event" /></td>
+          <td><input type="date" [(ngModel)]="policyForm.endDate" (ngModelChange)="policyForm.endDate = $event" /></td>
+
+          <td>
+            <button (click)="saveChanges(policyForm)">שמור שינויים</button>
+            <button (click)="deletePolicy(policyForm.id)">מחק</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="showModal" class="student-list-container">
+    <div class="modal-content">
+      <span class="close" (click)="showModal = false">&times;</span>
+      <h2>הוספת פוליסה חדשה ל{{user.fullName}} ({{user.id}})</h2>
+      <form (ngSubmit)="addNewPolicy()">
+        <div class="form-group">
+          <label for="policyNumber">מספר פוליסה:</label>
+          <input type="text" id="policyNumber" [(ngModel)]="policy.policyNumber" name="policyNumber">
+        </div>
+        <div class="form-group">
+          <label for="insuranceAmount">סכום ביטוח:</label>
+          <input type="number" id="insuranceAmount" [(ngModel)]="policy.insuranceAmount" name="insuranceAmount">
+        </div>
+        <div class="form-group">
+          <label for="startDate">תאריך התחלה:</label>
+          <input type="date" id="startDate" [(ngModel)]="policy.startDate" name="startDate">
+        </div>
+        <div class="form-group">
+          <label for="endDate">תאריך סיום:</label>
+          <input type="date" id="endDate" [(ngModel)]="policy.endDate" name="endDate">
+        </div>
+        <button type="submit">שמור פוליסה</button>
+      </form>
+    </div>
+  </div>
+  
+</body>
+</html>
